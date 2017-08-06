@@ -4,6 +4,9 @@ var server = require("http").createServer(function(req, res) {
      var output = fs.readFileSync("./index.html", "utf-8");
      res.end(output);
 }).listen(8080);
+
+console.log('listening on *:8080');
+
 var io = require("socket.io").listen(server);
 
 var userHash = {};
