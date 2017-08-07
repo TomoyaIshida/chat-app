@@ -3,15 +3,20 @@
   <meta charset="UTF-8">
   <title>chat-app</title>
   <style>
-    header { height: 50px; width: 100%; background-color: #197fc3; position: fixed; }
-    body { background-color: #fff; margin: 0; padding: 0; }
-    .chat-space {background-color: #fbb025; margin: 0 auto; height: 80% ; width: 500px; padding: 50px 0; overflow: auto; }
-    input { margin: 0 auto }
-    button{ cursor: pointer; margin: 0 auto; }
-    footer{ height: 50px; width: 100%; background-color: orange; }
+    header { height: 50px; width: 100%; background-color: #197fc3; position: fixed; text-align: center; line-height: 50px; color: #fff; font-size: 20px; font-weight: bold;}
+    .title { height: 50px; width: 700px; background-color: #197fc3; margin: 0 auto;}
+    body { background-color: #F8F8F8; margin: 0; padding: 0; }
+    .chat-space {background-color: #F5F5F5; margin: 0 auto; height: 80% ; width: 700px; padding: 50px 0; overflow: auto; }
+    input { margin: 0 auto; height: 30px; }
+    button{ cursor: pointer; margin: 0 auto; height: 30px; }
+    footer{ height: 30px; width: 100%; background-color: orange; padding: 10px 0;}
+    .form-space { margin: 0 auto; width: 250px; }
   </style>
 </head>
 <header>
+  <div class="title">
+    Chat-App
+  </div>
 </header>
 <body>
   <div class="chat-space">
@@ -50,7 +55,9 @@
   </div>
 </body>
 <footer>
-  <input type="text" id="msg_input" style="width:200px;" />
-  <button onclick="publishMessage();">送信</button>
+  <div class="form-space">
+    <input type="text" id="msg_input" style="width:200px;" />
+    <button onclick="publishMessage();">送信</button>
+  </div>
 </footer>
 </html>
