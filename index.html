@@ -1,13 +1,13 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>chat-app</title>
+  <title>chat-number</title>
   <style>
     header { height: 50px; width: 100%; background-color: #197fc3; position: fixed; text-align: center; line-height: 50px; color: #fff; font-size: 20px; font-weight: bold;}
     .title { height: 50px; width: 700px; background-color: #197fc3; margin: 0 auto;}
     body { background-color: #F8F8F8; margin: 0; padding: 0; }
-    .chat-space {background-color: #F5F5F5; margin: 0 auto; height: 80% ; width: 700px; padding: 50px 0; overflow: auto; }
-    input { margin: 0 auto; height: 30px; }
+    .chat-space {background-color: #F5F5F5; margin: 0 auto; height: 75% ; width: 660px; padding: 70px 20px; overflow: auto; }
+    input { margin: 0 auto; height: 30px;}
     button{ cursor: pointer; margin: 0 auto; height: 30px; }
     footer{ height: 30px; width: 100%; background-color: orange; padding: 10px 0;}
     .form-space { margin: 0 auto; width: 250px; }
@@ -15,7 +15,7 @@
 </head>
 <header>
   <div class="title">
-    Chat-App
+    Chat Number
   </div>
 </header>
 <body>
@@ -36,7 +36,7 @@
 
       function publishMessage() {
         var textInput = document.getElementById('msg_input');
-        var msg = "[" + myName + "] " + textInput.value;
+        var msg = "" + myName + "" + "番 " + "「" + textInput.value + "」";
         socketio.emit("publish", {value: msg});
         textInput.value = '';
       }
@@ -48,8 +48,8 @@
       }
 
       var msgArea = document.getElementById("msg");
-      var myName = Math.floor(Math.random()*100) + "さん";
-      addMessage("あなたは" + myName + "として入室しました");
+      var myName = Math.floor(Math.random()*100);
+      addMessage("あなたのチャットナンバーは" + myName + "番です！");
       start(myName);
     </script>
   </div>
